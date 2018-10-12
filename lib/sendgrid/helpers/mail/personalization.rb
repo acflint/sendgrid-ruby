@@ -76,7 +76,7 @@ module SendGrid
         'custom_args' => self.custom_args,
         'dynamic_template_data' => self.dynamic_template_data,
         'send_at' => self.send_at
-      }.delete_if { |_, value| value.to_s.strip == '' || value == [] || value == {}}
+      }.delete_if { |_, value| value.nil? || value.to_s.strip == '' || value == [] || value == {}}
     end
   end
 end
