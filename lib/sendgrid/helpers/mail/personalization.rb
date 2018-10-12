@@ -54,6 +54,8 @@ module SendGrid
 
     def add_dynamic_template_data(dynamic_template_data)
       dynamic_template_data = dynamic_template_data.to_json
+      return if dynamic_template_data.empty?
+
       @dynamic_template_data = @dynamic_template_data.merge(dynamic_template_data['dynamic_template_data'])
     end
 
